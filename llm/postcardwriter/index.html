@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
+	
+	<title>Postcard writer</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div style="position: fixed;top: 0;left: 0;padding: 0.5rem;border: 1px dotted black;background-color: white;z-index: 1000;font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+			font-weight: normal;">
+		back to the <a href="/index.html">main index!</a>
+	</div>
+
+	<h1>Postcard writer</h1>
+	<button id= "about" type="button">About</button>
+    <form >
+		<div class="row">
+
+			<label for="content" >
+				Event
+			</label>
+			<input name="content" type="text" id="content">
+		</div>
+		<div class="row">
+
+			<label for="name">For
+			</label>
+			<input  name="name" type="text" id="name">
+		</div>
+		<div class="row">
+
+			<label for="yourName">From
+			</label>
+			<input  name="yourName" type="text" id="yourName">
+		</div>
+		<button id="submit" type="submit">Send</button>
+    </form>
+	<div id="target"></div>
+	<script type="module" src="index.js"></script>
+</body>
+</html>

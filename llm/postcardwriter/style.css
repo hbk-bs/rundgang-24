@@ -1,0 +1,165 @@
+
+body{
+  background-color:#96A4A5;
+  padding: 1em 2em;
+  color: #0e0d0d;
+  font-family: "Cutive", serif;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  
+  
+}
+
+h1 {
+text-align: left;
+  font-size: 40px;
+  margin-bottom: 50px ;
+  margin-top: 100px;
+
+}
+
+h2 {
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 0em;
+}
+h3 {
+  font-size: 30px;
+  margin-bottom: 10px ;
+  margin-top: 5px;
+  display:inline-flex;
+
+}
+
+p {
+  text-align: left;
+  margin-top:10px ;
+  left: 15px;
+  right: 15px;
+}
+
+
+.cutive-regular {
+  font-family: "Cutive", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+.start {
+  position: relative;
+  display: inline-block;
+}
+
+#startbutton {
+  position: relative;
+  top: 400px; /* Verschiebung nach unten */
+  margin-bottom: 100px;
+  width: 80px; /* Festgelegte Breite */
+  height: 30px;
+  background-color:#2D3644;
+  border: none;
+  color: #ffffff; /* Weiße Textfarbe */
+  font-size: 16px;
+}
+  #startbutton:hover {
+  color: #000000;
+
+}
+
+#about {
+  position: absolute;
+  font-family: "Cutive", serif;
+  top: 20px; /* Abstand vom oberen Rand */
+  right: 20px;
+  width: 80px; /* Festgelegte Breite */
+  height: 30px;
+  background-color:#2D3644;
+  border: none;
+  color: #ffffff; /* Weiße Textfarbe */
+  font-size: 12px;
+}
+  #about:hover {
+  color: #000000;
+
+
+}
+#index {
+  position: absolute;
+  font-family: "Cutive", serif;
+  top: 20px; /* Abstand vom oberen Rand */
+  left: 20px;
+  width: 80px; /* Festgelegte Breite */
+  height: 30px;
+  background-color:#2D3644;
+  border: none;
+  color: #ffffff; /* Weiße Textfarbe */
+  font-size: 12px;
+}
+  #index:hover {
+  color: #000000;
+
+}
+
+
+#tostart {
+position: absolute;
+font-family: "Cutive", serif;
+top: 20px; /* Abstand vom oberen Rand */
+left: 20px;
+width: 80px; /* Festgelegte Breite */
+height: 30px;
+background-color:#2D3644;
+border: none;
+color: #ffffff; /* Weiße Textfarbe */
+font-size: 12px;
+}
+#index:hover {
+color: #000000;
+
+}
+
+
+
+.role{
+  color: rgb(104, 67, 20);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between ;
+  margin-top: 10px;
+}
+label{
+padding-right: 1rem;
+}
+
+.assistant{
+  font-weight: 800;
+}
+
+#submit {
+position: flex;
+font-family: "Cutive", serif;
+  /*top: 80px; /* Abstand vom oberen Rand */
+  flex-direction: column;
+  align-items: center;
+  top: 20px;
+  justify-content: center;
+  width: 80px; /* Festgelegte Breite */
+  height: 30px;
+  background-color:#2D3644;
+  border: none;
+  color: #ffffff; /* Weiße Textfarbe */
+  font-size: 12px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+  #submit:hover {
+  color: #000000;
+  }

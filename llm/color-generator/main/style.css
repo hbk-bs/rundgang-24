@@ -1,0 +1,125 @@
+html{
+  font-size: 18px;
+}
+
+h1 {
+  text-align: left;
+  color: #c26400;
+  font-size:3rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+body, html{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+}
+
+canvas{
+  display: block;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#saveButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background: none;
+  color: rgb(29, 29, 29);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#saveButton:hover {
+  text-decoration: underline;
+}
+
+#aboutButton {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  padding: 5px 10px;
+  background: none;
+  color: rgb(29, 29, 29);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#aboutButton:hover {
+  text-decoration: underline;
+}
+
+#welcomeModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  color: white;
+  z-index: 1000;
+}
+#modalContent {
+  background: #6bbaff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  width: 80%;
+  max-width: 1000rem;
+  box-sizing: border-box;
+}
+#closeButton {
+  background: #c26400;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  #modalContent {
+      padding: 15px;
+  }
+  #closeButton {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+  h1 {
+    font-size: 5vw;
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 7vw;
+  }
+}

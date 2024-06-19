@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <script src="/lib/p5.min.js"></script>
+	<script src="/lib/p5.sound.min.js"></script> -->
+    <title>Color Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module">
+        import {LLM} from "./llm.js";
+		const llm = new LLM({
+			host: "https://mirea26-openai_api.web.val.run/"
+		})
+        window.llm = llm;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+</head>
+
+<body>
+
+    <div style="position: fixed;top: 0;left: 0;padding: 0.5rem;border: 1px dotted black;background-color: white;z-index: 1000;font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+			font-weight: normal;">
+		back to the <a href="/index.html">main index!</a>
+	</div>
+
+    <div id="welcomeModal">
+        <div id="modalContent">
+            <h1>Welcome to the Color Generator!</h1>
+            <p>Create images with mouse clicks. Click on the screen five times. Depending on where you click, a different color will be created. Click five times in the same place or five times in completely different places on the screen. Try it out, have fun and remember to save your picture at the end!</p>
+            <button id="closeButton">Let`s go!</button>
+        </div>
+    </div>
+
+    <div id="mainContent">
+        <canvas id="myCanvas"></canvas>
+        <script src="index.js"></script>
+    
+        <div id="output"></div>
+        <button id="saveButton">Save Image</button>
+        <button id="aboutButton"><a href="/llm/color-generator/impressum/index.html">about</a></button>
+        </div>
+</body>
+
+</html>

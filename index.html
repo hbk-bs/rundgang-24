@@ -5,61 +5,111 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>rundgang 2024</title>
-	<style>
-		* {
-			font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-			font-weight: normal;
-		}
-
-		ul {
-			padding: 0;
-		}
-
-		li {
-			list-style-type: none;
-			padding: 0.5em;
-
-		}
-	</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<header>
 		<h1>rundgang 2024</h1>
-		<p>Projects from the Seminar on Fundamentals of Digital Design</p>
+		<p>Projects from the seminar on fundamentals of digital design.</p>
 	</header>
 
 	<main>
-
 		<ul>
-			<h3>genai</h3>
-			<li><a href="genai/another/index.html">another</a></li>
-			<h3>creative coding</h3>
-			<li><a href="creative-coding/example/index.html">example</a></li>
-			<h3>llm</h3>
-			<li><a href="llm/more/index.html">more</a></li>
+			<span id="genai">
+
+				<h3>Genai</h3>
+				<li><a href="genai/another/index.html">another</a></li>
+			</span>
+			<span id="creative-coding">
+				<h3>creative coding</h3>
+				<li><a href="creative-coding/example/index.html">example</a></li>
+			</span>
+			<span id="llm">
+
+				<h3>llm</h3>
+				<li><a href="llm/more/index.html">more 1</a></li>
+				<li><a href="llm/more/index.html">more 2</a></li>
+				<li><a href="llm/more/index.html">more 3</a></li>
+				<li><a href="llm/more/index.html">more 4</a></li>
+				<li><a href="llm/more/index.html">more 5</a></li>
+				<li><a href="llm/more/index.html">more 6</a></li>
+				<li><a href="llm/more/index.html">more 7</a></li>
+				<li><a href="llm/more/index.html">more 8</a></li>
+				<li><a href="llm/more/index.html">more 9</a></li>
+				<li><a href="llm/more/index.html">more 10</a></li>
+			</span>
+
 		</ul>
+
 	</main>
 	<footer>
-		<p>Built with ❤︎ @ hbk bs in 2024 by <a target="_blank" href="https://github.com/ff6347">ff6347</a>,
-			<a target="_blank" href="https://github.com/Philkng">Philkng</a>,
-			<a target="_blank" href="https://github.com/donomoria">donomoria</a>,
-			<a target="_blank" href="https://github.com/lelele2305">lelele2305</a>,
-			<a target="_blank" href="https://github.com/hannahsoophie">hannahsoophie</a>,
-			<a target="_blank" href="https://github.com/1202Ink">1202Ink</a>,
-			<a target="_blank" href="https://github.com/NanaBananaaaaa">NanaBananaaaaa</a>,
-			<a target="_blank" href="https://github.com/skip69cont">skip69cont</a>,
-			<a target="_blank" href="https://github.com/Mirea26">Mirea26</a>,
-			<a target="_blank" href="https://github.com/Diane1931">Diane1931</a>,
-			<a target="_blank" href="https://github.com/anne2810">anne2810</a>,
-			<a target="_blank" href="https://github.com/Isxbellxx">Isxbellxx</a>,
-			<a target="_blank" href="https://github.com/melmelllll">melmelllll</a>,
-			<a target="_blank" href="https://github.com/lonaabe">lonaabe</a>,
-			<a target="_blank" href="https://github.com/mokatrino">mokatrino</a>,
-			<a target="_blank" href="https://github.com/nanasbananas">nanasbananas</a> and
-			<a target="_blank" href="https://github.com/melmoor">melmoor</a>. Check out the source code on <a target="_blank" href="https://github.com/hbk-bs/rundgang-2024">GitHub</a>!
+		<p>Built with ❤︎ @ hbk bs in 2023 &amp; 2024 by
+			<span>
+				<a target="_blank" href="https://github.com/Philkng">Philkng</a>,
+				<a target="_blank" href="https://github.com/donomoria">donomoria</a>,
+				<a target="_blank" href="https://github.com/lelele2305">lelele2305</a>,
+				<a target="_blank" href="https://github.com/hannahsoophie">hannahsoophie</a>,
+				<a target="_blank" href="https://github.com/1202Ink">1202Ink</a>,
+				<a target="_blank" href="https://github.com/NanaBananaaaaa">NanaBananaaaaa</a>,
+				<a target="_blank" href="https://github.com/skip69cont">skip69cont</a>,
+				<a target="_blank" href="https://github.com/Mirea26">Mirea26</a>,
+				<a target="_blank" href="https://github.com/Diane1931">Diane1931</a>,
+				<a target="_blank" href="https://github.com/anne2810">anne2810</a>,
+				<a target="_blank" href="https://github.com/Isxbellxx">Isxbellxx</a>,
+				<a target="_blank" href="https://github.com/melmelllll">melmelllll</a>,
+				<a target="_blank" href="https://github.com/lonaabe">lonaabe</a>,
+				<a target="_blank" href="https://github.com/mokatrino">mokatrino</a>,
+				<a target="_blank" href="https://github.com/nanasbananas">nanasbananas</a> and
+				<a target="_blank" href="https://github.com/melmoor">melmoor</a>.
+			</span>
+				Taught by <a target="_blank" href="https://github.com/ff6347">ff6347</a>. Check out the source code on <a target="_blank" href="https://github.com/hbk-bs/rundgang-2024">GitHub</a>!
 		</p>
 	</footer>
+	<script>
+
+		function shuffleFooterNames () {
+			const footer = document.querySelector('footer');
+			const main = document.querySelector('main');
+			const names = footer.querySelectorAll('span > a');
+			// shuffle the array of names and append them to the footer
+			// use Intl.ListFormat to add thhe correct separator between the names
+			const shuffledNames = [...names].sort(() => Math.random() - 0.5);
+			const listFormatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+
+			footer.querySelector('span').innerHTML =  `${listFormatter.format(shuffledNames.map(name => name.outerHTML))}.`
+		}
+
+		function shuffleProjects () {
+			const projects = document.querySelectorAll('main > ul > span');
+			// shuffle the array of projects and append the ul again
+			const shuffledProjects = [...projects].sort(() => Math.random() - 0.5);
+			const ul = document.querySelector('main > ul');
+			ul.innerHTML = '';
+			shuffledProjects.forEach(project => ul.appendChild(project));
+
+		}
+
+		function shuffleAllListItems () {
+			const ids = ['genai', 'creative-coding', 'llm'];
+			ids.forEach(id => {
+				const listItems = document.querySelectorAll(`main > ul > span#${id} > li`);
+				// shuffle the array of list items and append them to the ul again
+				const shuffledListItems = [...listItems].sort(() => Math.random() - 0.5);
+				const ul = document.querySelector(`main > ul > span#${id}`);
+				// remove all li from the ul and append the shuffled ones
+
+				ul.querySelectorAll('li').forEach(li => li.remove());
+
+				shuffledListItems.forEach(listItem => ul.appendChild(listItem));
+			});
+
+		}
+
+		document.addEventListener('DOMContentLoaded',shuffleFooterNames);
+		document.addEventListener('DOMContentLoaded',shuffleProjects);
+		document.addEventListener('DOMContentLoaded',shuffleAllListItems);
+	</script>
 </body>
 
 </html>

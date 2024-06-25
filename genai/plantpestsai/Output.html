@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Pests AI</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+    
+    <h1>What pests does <br> my plant have?</h1>
+
+    <p>Your plant may have these pests:</p>
+
+    <div id="fungus" class="hidden">
+        <h2>
+            Fungus gnat
+        </h2>
+        <img class="pests" src="fungus.jpeg">
+        <p>
+            What you can do about it:
+        
+                <p>Yellow cards</p>
+                <p>Matches</p>
+                <p>Nematodes</p>
+            
+         </p>
+    </div>
+
+    <div id="thrips" class="hidden">
+        <h2>
+            Thrips
+        </h2>
+        <img class="pests" src="thrips.jpg">
+        <p>
+            What you can do about it:
+      
+                <p>Separate it</p>
+                <p>Rinse thoroughly</p>
+                <p>Neem oil</p>
+              
+         </p>
+    </div>
+
+    <div id="aphids" class="hidden">
+        <h2>
+            Aphids
+        </h2>
+        <img class="pests" src="aphids.jpeg">
+        <p>
+            What you can do about it:
+       
+                <p>yellow cards</p>
+                <p>matches</p>
+                <p>nematodes</p>
+                  
+        </p>
+    </div>
+
+    <div id="scale" class="hidden">
+        <h2>
+            Scale insects
+        </h2>
+        <img  class="pests" src="scale.jpeg">
+        <p>
+             What you can do about it:
+      
+                <p>Scrape off</p>
+                <p>Spray</p>
+                <p>Soft soap</p>
+            
+        </p>
+    </div>
+
+    <div id="spider" class="hidden">
+        <h2>
+            Spider mites
+        </h2>
+        <img class="pests" src="spider.jpeg">
+        <p>
+            What you can do about it:
+
+                <p>yellow cards</p>
+                <p>matches</p>
+                <p>nematodes</p>
+     
+        </p>
+    </div>
+
+    <div id="white" class="hidden">
+        <h2>
+            White flies
+        </h2>
+        <img class="pests" src="white.jpeg">
+        <p>
+            What you can do about it:
+
+                <p>Neem oil</p>
+                <p>Vinegar</p>
+                <p>Yellow cards</p>
+          
+        </p>
+    </div>
+
+
+    <div id="target" class="hidden">
+        <h3>Fungus gnat</h3>
+        <div id=""></div>
+        <p>
+            What you can do: 
+       
+                <ul>yellow cards</ul>
+                <ul>matches</ul>
+                <ul>nematodes</ul>
+     
+        </p>
+    </div>
+
+    <div class="loading-container">
+        <div class="leaf"></div>
+    </div>    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const params = new URLSearchParams(location.search);
+
+
+            // console.log(params.has("label"));
+            if(params.has("label")) {
+                console.log(params.get("label"));
+                const target = document.getElementById("target");
+                if(target){
+                    switch(params.get("label")){
+                        //case "aphids":{
+                            //target.innerText = "Dies ist der apihid"
+                            //break;
+                       // }
+                    
+
+                        case "Fungus gnat":{
+                            document.querySelector("#fungus").classList.remove("hidden");
+                            break;
+                        }
+
+                        case "thrips":{
+                            document.querySelector("#thrips").classList.remove("hidden");
+                            break;
+                        }
+
+                        case "aphids":{
+                            document.querySelector("#aphids").classList.remove("hidden");
+                            break;
+                        }
+
+                        case "scale insects":{
+                            document.querySelector("#scale").classList.remove("hidden");
+                            break;
+                        }
+
+                        case "Spider mite":{
+                            document.querySelector("#spider").classList.remove("hidden");
+                            break;
+                        }
+
+                        case "white fly":{
+                            document.querySelector("#white").classList.remove("hidden");
+                            break;
+                        }
+                    
+
+                    }
+                }
+            }
+        });
+    </script>
+    <button><a href="index.html">Try new leaf</a></button>
+
+
+    
+</body>
+
+</html>

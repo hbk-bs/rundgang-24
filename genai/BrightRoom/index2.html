@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightRoom</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+  
+    <div><div class="text">Hier kannst du die Helligkeit deines Raumes prüfen.<br>Achte darauf, dass du die Kamera nicht direkt auf eine Lichtquelle richtest</div><br>
+  <p></p>
+  <div id="target"></div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/addons/p5.dom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ml5@latest/dist/ml5.min.js"></script>
+<script type="text/javascript">
+  // Classifier Variable
+  let classifier;
+  // Model URL
+  let imageModelURL = 'https://teachablemachine.withgoogle.com/models/jwsM_1Jrw/';
+  
+  // Video
+  let video;
+  let flippedVideo;
+  // To store the classification
+  let label = "";
+
+  // Load the model first
+  function preload() {
+    classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+  }
+
+  function setup() {
+        createCanvas(400, 300);
+        video = createCapture(VIDEO);
+        video.size(400, 300);
+        video.hide();
+    
+    
+        flippedVideo = ml5.flipImage(video);
+        classifyVideo();
+      }
+    
+      function draw() {
+        image(flippedVideo, 20, 0); 
+    
+      }
+
+  function classifyVideo() {
+    flippedVideo = ml5.flipImage(video)
+    classifier.classify(flippedVideo, gotResult);
+    flippedVideo.remove();
+
+  }
+
+  // When we get a result
+  function gotResult(error, results) {
+    // If there is an error
+    if (error) {
+      console.error(error);
+      return;
+    }
+    // The results are in an array ordered by confidence.
+    // console.log(results[0]);
+    label = results[0].label;
+
+    const target = document.querySelector("div#target")
+    if(target !== null){
+      target.innerText = results[0].label;
+    }
+    // Classifiy again!
+    classifyVideo();
+  }
+</script>
+</body>
+</html>

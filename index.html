@@ -16,6 +16,11 @@
 
 	<main>
 		<ul>
+			<span id="teachable-machine">
+
+				<h3>Teachable Machine</h3>
+				<li><a href="teachable-machine/hair-detector/index.html">Hair Detector</a></li>
+			</span>
 			<span id="genai">
 
 				<h3>Genai</h3>
@@ -93,7 +98,7 @@
 		}
 
 		function shuffleAllListItems () {
-			const ids = ['genai', 'creative-coding', 'llm'];
+			const ids = ['genai', 'creative-coding', 'llm','teachable-machine'];
 			ids.forEach(id => {
 				const listItems = document.querySelectorAll(`main > ul > span#${id} > li`);
 				// shuffle the array of list items and append them to the ul again

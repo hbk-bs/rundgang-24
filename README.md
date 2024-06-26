@@ -32,6 +32,9 @@ Please add the following code to the top of your HTML files to link back to the 
 
     a.back-to-index:hover {
       color: blueviolet;
+      font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans',
+        source-sans-pro, sans-serif;
+      font-weight: normal;
     }
   </style>
   back to the <a href="/index.html" class="back-to-index">main index!</a>

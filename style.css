@@ -19,6 +19,8 @@ h5,
 h6 {
   font-style: italic;
   font-weight: bold;
+
+  margin-top: 3rem;
 }
 ul {
   padding: 0;

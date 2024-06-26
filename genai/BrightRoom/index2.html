@@ -7,7 +7,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-  
+  	<div style="position: fixed;top: 0;left: 0;padding: 0.5rem;border: 1px dotted black;background-color: white;z-index: 1000;font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+			font-weight: normal;">
+		back to the <a href="/index.html">main index!</a>
+		<script src="sketch.js"></script>
+	</div>
     <div><div class="text">Hier kannst du die Helligkeit deines Raumes prüfen.<br>Achte darauf, dass du die Kamera nicht direkt auf eine Lichtquelle richtest</div><br>
   <p></p>
   <div id="target"></div>
@@ -20,7 +24,7 @@
   let classifier;
   // Model URL
   let imageModelURL = 'https://teachablemachine.withgoogle.com/models/jwsM_1Jrw/';
-  
+
   // Video
   let video;
   let flippedVideo;
@@ -37,15 +41,15 @@
         video = createCapture(VIDEO);
         video.size(400, 300);
         video.hide();
-    
-    
+
+
         flippedVideo = ml5.flipImage(video);
         classifyVideo();
       }
-    
+
       function draw() {
-        image(flippedVideo, 20, 0); 
-    
+        image(flippedVideo, 20, 0);
+
       }
 
   function classifyVideo() {

@@ -3,9 +3,8 @@ let classifier;
 // Model URL
 let imageModelURL = 'https://teachablemachine.withgoogle.com/models/8QUY0jIrR/';
 
-
 // To store the classification
-let label = "";
+let label = '';
 // will hold a ref to the input#file[file]
 let input;
 
@@ -25,15 +24,15 @@ function fileSelectHandler(event) {
 }
 function fileHandler(file) {
   console.log(file);
-  if (file.type === "image") {
+  if (file.type === 'image') {
     // we can load the image into an DOM img element
-    console.log("it was an image file");
-    const imgElt = createImg(file.data, "");
+    console.log('it was an image file');
+    const imgElt = createImg(file.data, '');
     imgElt.hide();
     // but we can also load it into a p5.Image
     // and draw it to the canvas
     loadImage(file.data, (image) => {
-      console.log("image data loaded into p5.Image");
+      console.log('image data loaded into p5.Image');
       // letter box it (resize it to fit the canvas)
       // if (image.width > image.height) {
       //   console.log("resize to fit w", width);
@@ -44,28 +43,25 @@ function fileHandler(file) {
       // }
       // img = image;
       let count = 0;
-      const interval = setInterval(() => { 
+      const interval = setInterval(() => {
         count++;
-        console.log("count", count);
+        console.log('count', count);
         if (count === 5) {
           clearInterval(interval);
           classifier.classify(image, gotResult);
         }
-
       }, 1000);
-
     });
   }
 }
 
-
 function setup() {
   // createCanvas(320, 260);
   // Create the video
-  input = select("#file");
+  input = select('#file');
   console.log(input);
-  if (!input) throw new Error("input element missing");
-  input.elt.addEventListener("change", fileSelectHandler, false);
+  if (!input) throw new Error('input element missing');
+  input.elt.addEventListener('change', fileSelectHandler, false);
 
   // classifier.classify(img, gotResult);
 
@@ -75,10 +71,7 @@ function setup() {
 
 function draw() {
   // background(0);
- 
 }
-
-
 
 // When we get a result
 function gotResult(error, results) {
@@ -90,7 +83,6 @@ function gotResult(error, results) {
   // The results are in an array ordered by confidence.
   // console.log(results[0]);
   label = results[0].label;
-  location.href = `/Output.html?label=${label}`;
+  location.href = `/output.html?label=${label}`;
   // Classifiy again!
-  
 }

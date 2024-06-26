@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        font-weight: normal;
+        font-size: 18px;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 1rem;
+      }
+      
+      
+      #buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      #status {
+        font-size: 0.7rem;
+        font-style: italic;
+      }
+      .link {
+            text-decoration: none;
+            color: white; /* Change link text color to white */
+}
+    
+    </style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #CC8B8B; /* Pink background */
+            color: white; /* White text */
+            font-family: Arial, sans-serif; /* Font style */
+        }
+    
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center items horizontally and vertically */
+            height: 100vh;
+            flex-direction: column; /* Arrange items vertically */
+            position: relative; /* Added for absolute positioning */
+        }
+    
+        #drawingArea {
+            background-color: white; /* White background */
+            border: none; /* No border */
+            margin-bottom: 10px;
+        }
+    
+        #generateButton {
+            padding: 10px 20px;
+            background-color: rgba(50, 50, 50, 0.7); /* Dark grey with 70% opacity */
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    
+        #title {
+            font-size: 18px; /* Smaller font size */
+            position: absolute; /* Position at top left corner */
+            top: 10px;
+            left: 10px;
+        }
+    
+        #subTitle {
+            font-size: 18px; /* Smaller font size */
+            font-weight: lighter; /* Thin font weight */
+            position: absolute; /* Position at top left corner */
+            top: 10px; /* Adjust the top position */
+            left: calc(110px + 2cm); /* Moved 2 cm to the right */
+        }
+    </style>
+  </head>
+  <body>
+    <div style="position: fixed;top: 0;right: 0;padding: 0.5rem;border: 1px dotted black;background-color: white;z-index: 1000;font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    font-weight: normal;">
+  back to the <a href="/index.html">main index!</a>
+    </div>
+    <main>
+      <div id="title">Hair Type Guesser</div>
+      <div id="subTitle">
+        <a href="page2.html" class="link">What is a Hairtype</a>
+        
+      
+      
+
+      </div> 
+      <div id="status"></div>
+      <div id="sketch"></div>
+      <div id="buttons"></div>
+      <div id="confidence"></div>
+      <div id="label"></div>
+    </main>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script> -->
+    <script src="p5.js"></script>
+    <!-- <script
+      src="https://unpkg.com/ml5@latest/dist/ml5.min.js"
+      type="text/javascript"
+    ></script> -->
+    <script src="ml5.min.js" type="text/javascript"></script>
+    <script>
+      // path/filename: sketch.js
+      let cnv, clearButton, saveButton;
+      let px, py; // stores the previous mouse positions
+      let img;
+      let classifier;
+      let labelElement, confidenceElement;
+      let loadingModel = false;
+      let classifiying = false;
+      function preload() {
+        const status = select("#status");
+        let imageModelURL =
+          "https://teachablemachine.withgoogle.com/models/0LQqfdQA7/";
+        status.elt.innerText = "Loading model...";
+        loadingModel = true;
+        classifier = ml5.imageClassifier(
+          imageModelURL + "model.json",
+          function () {
+            console.log("model loaded successfully");
+            loadingModel = false;
+            status.elt.innerText = "Model loaded successfully";
+            const interval = setInterval(() => {
+              if (!loadingModel) {
+                clearInterval(interval);
+                status.elt.innerText = "Ready for your drawing...";
+              }
+            }, 1000);
+          },
+        );
+      }
+
+      function setup() {
+        cnv = createCanvas(600, 600);
+        cnv.parent("sketch");
+        background(255);
+
+        px = mouseX; // initialize previous mouse x
+        py = mouseY; // initialize previous mouse y
+
+        // Button to clear the canvas
+        clearButton = createButton("Clear Canvas");
+        clearButton.parent("buttons");
+        clearButton.mousePressed(clearCanvas);
+
+        // Button to save the canvas
+        saveButton = createButton("Save Canvas");
+        saveButton.parent("buttons");
+
+        saveButton.mousePressed(classifyCanvas);
+        strokeCap(ROUND);
+        const status = select("#status");
+      }
+
+      function draw() {
+        if (mouseIsPressed) {
+          let weight = dist(px, py, mouseX, mouseY);
+          strokeWeight(constrain(weight, 1, 5)); // thinner brushstroke
+          line(px, py, mouseX, mouseY);
+        }
+        px = mouseX; // updates previous mouse x
+        py = mouseY; // updates previous mouse y
+      }
+
+      // Function to clear the canvas
+      function clearCanvas() {
+        background(255);
+      }
+
+      // Function to save the canvas as an image
+      function classifyCanvas() {
+        classifiying = true;
+        const status = select("#status");
+        status.elt.innerText = "Classifying...";
+        // save(cnv, "myCanvas.jpg");
+        img = get();
+        classifier.classify(img, (err, results) => {
+          if (err) {
+            console.error(err);
+            classifiying = false;
+            status.elt.innerText = "Error classifying the image";
+            return;
+          }
+          classifiying = false;
+          status.elt.innerText = "Classified successfully";
+          console.log(results);
+          labelElement = select("#label");
+          labelElement.elt.innerText = `Label: ${results[0].label}`;
+          // labelElement.createDiv(`Label: ${results[0].label}`);
+          confidenceElement = select("#confidence");
+          confidenceElement.elt.innerText = `Confidence: ${(results[0].confidence * 100).toFixed(2)} %`;
+          let count = 0;
+          const interval = setInterval(() => {
+            if (count === 2) {
+              clearInterval(interval);
+              status.elt.innerText = "Ready for your drawing...";
+            }
+          }, 1000);
+        });
+      }
+    </script>
+  </body>
+</html>

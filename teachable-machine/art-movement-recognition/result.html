@@ -17,6 +17,33 @@
   </head>
 
   <body>
+    <div class="back-to-index-container">
+      <style>
+        .back-to-index-container {
+          color: black;
+          position: fixed;
+          top: 0;
+          right: 0;
+          padding: 0.5rem;
+          border: 1px dotted black;
+          background-color: white;
+          z-index: 1000;
+          font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans',
+            source-sans-pro, sans-serif;
+          font-weight: normal;
+        }
+
+        .back-to-index {
+          color: blue;
+          text-decoration: underline;
+        }
+
+        a.back-to-index:hover {
+          color: blueviolet;
+        }
+      </style>
+      back to the <a href="/index.html" class="back-to-index">main index!</a>
+    </div>
     <nav>
       <header>
         <a href="index.html">Back to homepage</a>
@@ -47,15 +74,15 @@
     </div>
 
     <div class="spacer"></div>
-  
+
     <section container>
      <div id="additional-text"></div>
-     
+
      <div id="canvas-container">
         <canvas id="canvas" width="400" height="400"></canvas>
       </div>
 
-      
+
     </section>
 
     <script src="sketch.js"></script>

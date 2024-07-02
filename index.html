@@ -68,7 +68,7 @@
 					<a href="https://github.com/melmoor">melmoor</a>.
 				</span>
 				Taught by <a href="https://github.com/ff6347">ff6347</a>. Check out the source code on <a
-				 href="https://github.com/hbk-bs/rundgang-24">GitHub</a>!
+					href="https://github.com/hbk-bs/rundgang-24">GitHub</a>!
 			</p>
 		</div>
 	</footer>
@@ -123,7 +123,17 @@
 				link.addEventListener('click', function (event) {
 					event.preventDefault();
 					const url = link.href;
-					const windowFeatures = "width=800,height=600,scrollbars=yes,resizable=yes";
+					// Calculate available space for placing the window
+					const maxWidth = window.screen.width - 800; // Window width
+					const maxHeight = window.screen.height - 600; // Window height
+
+					// Generate random positions within the available space
+					const left = Math.floor(Math.random() * maxWidth);
+					const top = Math.floor(Math.random() * maxHeight);
+
+					// Update windowFeatures with random positions
+					const windowFeatures = `width=800,height=600,scrollbars=yes,resizable=yes,left=${left},top=${top}`;
+
 					window.open(url, "_blank", windowFeatures);
 				});
 			});

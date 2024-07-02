@@ -5,14 +5,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>rundgang 2024</title>
-<link rel="stylesheet" href="style.css">
-<link rel="shortcut icon" href="/favicon-32x32.png" type="image/png">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="/favicon-32x32.png" type="image/png">
 </head>
 
 <body>
 	<header>
-		<h1>rundgang 2024</h1>
-		<p>Projects from the seminar on fundamentals of digital design.</p>
+		<div class="content">
+
+			<h1>rundgang 2024</h1>
+			<p>Projects from the seminar on fundamentals of digital design.</p>
+		</div>
 	</header>
 
 	<main>
@@ -26,7 +29,6 @@
 				<li><a href="teachable-machine/art-movement-recognition/">Art Movement Recognition</a></li>
 			</span>
 			<span id="genai">
-
 				<h3>Generative AI</h3>
 			</span>
 			<span id="creative-coding">
@@ -38,44 +40,41 @@
 				<li><a href="llm/color-generator/main/index.html">Color Generator</a></li>
 				<li><a href="llm/postcardwriter/index.html">Postcard Writer</a></li>
 				<li><a href="llm/random-task/index.html">Random Task Generator</a></li>
-				<li><a href="llm/more/index.html">more 4</a></li>
-				<li><a href="llm/more/index.html">more 5</a></li>
-				<li><a href="llm/more/index.html">more 6</a></li>
-				<li><a href="llm/more/index.html">more 7</a></li>
-				<li><a href="llm/more/index.html">more 8</a></li>
-				<li><a href="llm/more/index.html">more 9</a></li>
-				<li><a href="llm/more/index.html">more 10</a></li>
 			</span>
 
 		</ul>
 
 	</main>
 	<footer>
-		<p>Built with ❤︎ @ hbk bs in 2023 &amp; 2024 by
-			<span>
-				<a target="_blank" href="https://github.com/Philkng">Philkng</a>,
-				<a target="_blank" href="https://github.com/donomoria">donomoria</a>,
-				<a target="_blank" href="https://github.com/lelele2305">lelele2305</a>,
-				<a target="_blank" href="https://github.com/hannahsoophie">hannahsoophie</a>,
-				<a target="_blank" href="https://github.com/1202Ink">1202Ink</a>,
-				<a target="_blank" href="https://github.com/NanaBananaaaaa">NanaBananaaaaa</a>,
-				<a target="_blank" href="https://github.com/skip69cont">skip69cont</a>,
-				<a target="_blank" href="https://github.com/Mirea26">Mirea26</a>,
-				<a target="_blank" href="https://github.com/Diane1931">Diane1931</a>,
-				<a target="_blank" href="https://github.com/anne2810">anne2810</a>,
-				<a target="_blank" href="https://github.com/Isxbellxx">Isxbellxx</a>,
-				<a target="_blank" href="https://github.com/melmelllll">melmelllll</a>,
-				<a target="_blank" href="https://github.com/lonaabe">lonaabe</a>,
-				<a target="_blank" href="https://github.com/mokatrino">mokatrino</a>,
-				<a target="_blank" href="https://github.com/nanasbananas">nanasbananas</a> and
-				<a target="_blank" href="https://github.com/melmoor">melmoor</a>.
-			</span>
-				Taught by <a target="_blank" href="https://github.com/ff6347">ff6347</a>. Check out the source code on <a target="_blank" href="https://github.com/hbk-bs/rundgang-2024">GitHub</a>!
-		</p>
+		<div class="content">
+
+			<p>Built with ❤︎ @ hbk bs in 2023 &amp; 2024 by
+				<span>
+					<a href="https://github.com/Philkng">Philkng</a>,
+					<a href="https://github.com/donomoria">donomoria</a>,
+					<a href="https://github.com/lelele2305">lelele2305</a>,
+					<a href="https://github.com/hannahsoophie">hannahsoophie</a>,
+					<a href="https://github.com/1202Ink">1202Ink</a>,
+					<a href="https://github.com/NanaBananaaaaa">NanaBananaaaaa</a>,
+					<a href="https://github.com/skip69cont">skip69cont</a>,
+					<a href="https://github.com/Mirea26">Mirea26</a>,
+					<a href="https://github.com/Diane1931">Diane1931</a>,
+					<a href="https://github.com/anne2810">anne2810</a>,
+					<a href="https://github.com/Isxbellxx">Isxbellxx</a>,
+					<a href="https://github.com/melmelllll">melmelllll</a>,
+					<a href="https://github.com/lonaabe">lonaabe</a>,
+					<a href="https://github.com/mokatrino">mokatrino</a>,
+					<a href="https://github.com/nanasbananas">nanasbananas</a> and
+					<a href="https://github.com/melmoor">melmoor</a>.
+				</span>
+				Taught by <a href="https://github.com/ff6347">ff6347</a>. Check out the source code on <a
+				 href="https://github.com/hbk-bs/rundgang-2024">GitHub</a>!
+			</p>
+		</div>
 	</footer>
 	<script>
 
-		function shuffleFooterNames () {
+		function shuffleFooterNames() {
 			const footer = document.querySelector('footer');
 			const main = document.querySelector('main');
 			const names = footer.querySelectorAll('span > a');
@@ -84,10 +83,10 @@
 			const shuffledNames = [...names].sort(() => Math.random() - 0.5);
 			const listFormatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
 
-			footer.querySelector('span').innerHTML =  `${listFormatter.format(shuffledNames.map(name => name.outerHTML))}.`
+			footer.querySelector('span').innerHTML = `${listFormatter.format(shuffledNames.map(name => name.outerHTML))}.`;
 		}
 
-		function shuffleProjects () {
+		function shuffleProjects() {
 			const projects = document.querySelectorAll('main > ul > span');
 			// shuffle the array of projects and append the ul again
 			const shuffledProjects = [...projects].sort(() => Math.random() - 0.5);
@@ -97,8 +96,8 @@
 
 		}
 
-		function shuffleAllListItems () {
-			const ids = ['genai', 'creative-coding', 'llm','teachable-machine'];
+		function shuffleAllListItems() {
+			const ids = ['genai', 'creative-coding', 'llm', 'teachable-machine'];
 			ids.forEach(id => {
 				const listItems = document.querySelectorAll(`main > ul > span#${id} > li`);
 				// shuffle the array of list items and append them to the ul again
@@ -113,9 +112,22 @@
 
 		}
 
-		document.addEventListener('DOMContentLoaded',shuffleFooterNames);
-		document.addEventListener('DOMContentLoaded',shuffleProjects);
-		document.addEventListener('DOMContentLoaded',shuffleAllListItems);
+		document.addEventListener('DOMContentLoaded', shuffleFooterNames);
+		document.addEventListener('DOMContentLoaded', shuffleProjects);
+		document.addEventListener('DOMContentLoaded', shuffleAllListItems);
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+
+			document.querySelectorAll('footer a').forEach(link => {
+				link.addEventListener('click', function (event) {
+					event.preventDefault();
+					const url = link.href;
+					const windowFeatures = "width=800,height=600,scrollbars=yes,resizable=yes";
+					window.open(url, "_blank", windowFeatures);
+				});
+			});
+		});
 	</script>
 </body>
 

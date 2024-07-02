@@ -33,6 +33,18 @@ li {
 main {
   padding-left: 2rem;
 }
+
+main {
+  margin: 0 auto;
+  max-width: 50vw;
+}
+
+footer > .content,
+header > .content {
+  margin: 0 auto;
+  max-width: 50vw;
+}
+
 header {
   padding: 0.5rem 1rem 1rem;
   background-color: white;

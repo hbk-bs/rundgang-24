@@ -1,0 +1,129 @@
+
+body{
+  background-color: #5F6F52;
+    font-family: "DM Serif Display", serif;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px ;
+    margin-top: 20px;
+  }
+
+  h2 {
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 0em;
+  }
+
+  p {
+    color: #000000;
+    text-align: left;
+    margin-top:70px ;
+    left: 15px;
+    right: 15px;
+    font-size:20px;
+
+  }
+
+.dm-serif-display-regular-italic {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .dm-serif-display-regular {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .resultscontainer {
+    width: 100%;
+    height: 100%; /* Breite des Containers */
+    max-width: 1200px; /* Maximale Breite des Containers */
+    margin: 0 auto; /* Zentriert den Container horizontal */
+    padding: 20px; /* Innenabstand des Containers */
+    background-color: #ffffff; /* Hintergrundfarbe des Containers */
+    border: 1px solid #ccc; /* Rahmen des Containers */
+    box-sizing: border-box; /* Berücksichtigt Padding und Border */
+
+  }
+
+  #startbutton {
+    position: relative;
+    top:200px; /* Verschiebung nach unten */
+    width: 150px; /* Festgelegte Breite */
+    height: 50px;
+    background-color:#C4661F;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff; /* Weiße Textfarbe */
+   
+  }
+    #startbutton:hover {
+    color: #000000;
+  
+  }
+  #Anfang {
+    position:absolute ;
+    top:10px; /* Verschiebung nach unten */
+    right: 10px; ;
+    width: 80px; /* Festgelegte Breite */
+    height: 25px;
+    background-color:#373B33;
+    border-radius: 0px;
+    border: none;
+    color: #ffffff; /* Weiße Textfarbe */
+   
+  }
+    #Anfang:hover {
+    background-color: #000000;
+  
+  }
+
+  #foto-richtig {
+    background-color: #b3ce9c;
+    width: 50%;
+    height: 100px;
+    margin-top: 60px;
+    
+  
+  }
+  
+  #foto-falsch {
+    background-color:#783D19;
+    color: #ffffff;
+    width: 50%;
+    height: 100px;
+    margin-top: 60px;
+   
+   
+  }
+  
+  #zeichnung-richtig {
+background-color: #b3ce9c;
+width: 50%;
+height: 100px;
+margin-top: 60px;
+  }
+  
+  #zeichnung-falsch {
+background-color:#783D19;
+color: #ffffff;
+width: 50%;
+height: 100px;
+margin-top: 60px;
+    
+    
+  }
+  

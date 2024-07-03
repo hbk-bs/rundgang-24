@@ -1,0 +1,181 @@
+
+body{
+    background-color:#A9B388;
+    padding: 1em 2em;
+    color: #0e0d0d;
+    font-family: "DM Serif Display", serif;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    
+    
+}
+
+h1 {
+  text-align: left;
+    font-size: 40px;
+    margin-bottom: 10px ;
+    margin-top: 40px;
+
+  }
+
+  h2 {
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 0em;
+  }
+  h3 {
+    font-size: 30px;
+    margin-bottom: 10px ;
+    margin-top: 5px;
+    display:inline-flex;
+
+  }
+
+  p {
+    text-align: left;
+    margin-top:10px ;
+    left: 15px;
+    right: 15px;
+  }
+ 
+
+.dm-serif-display-regular-italic {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .dm-serif-display-regular {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .start {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+#image-container {
+ 
+  display:inline-flex;
+
+  justify-content: center;
+  align-items: center;
+  height:60vh ;
+
+}
+#image-container img {
+  align-items: center;
+  width: 70%;
+  height: auto;
+}
+
+#startbutton {
+  position: relative;
+  top: 60px; /* Verschiebung nach unten */
+  margin-bottom: 100px;
+  width: 150px; /* Festgelegte Breite */
+  height: 150px;
+  background-color:#C4661F;
+  border-radius: 100px;
+  border: none;
+  color: #ffffff; /* Weiße Textfarbe */
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+  #startbutton:hover {
+  color: #000000;
+
+}
+
+#about {
+  position: absolute;
+  top: 20px; /* Abstand vom oberen Rand */
+  right: 20px;
+  width: 80px; /* Festgelegte Breite */
+  height: 30px;
+  background-color:#5F6F52;
+  border: none;
+  color: #ffffff; /* Weiße Textfarbe */
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  #about:hover {
+  color: #000000;
+
+}
+
+#index {
+  position: absolute;
+  top: 20px; /* Abstand vom oberen Rand */
+  left: 20px;
+  width: 80px; /* Festgelegte Breite */
+  height: 30px;
+  background-color:#5F6F52;
+  border: none;
+  color: #ffffff; /* Weiße Textfarbe */
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  #index:hover {
+  color: #000000;
+
+}
+  
+
+
+
+
+#foto-button {
+  background-color:#373B33; /* Hintergrundfarbe des Buttons */
+  color: white; /* Textfarbe des Buttons */
+  width: 80px; /* Festgelegte Breite */
+  height: 40px;
+  display: inline;
+  flex-direction: row;
+  top: 20px; /* Verschiebung nach unten */
+  left: 15px;
+  position: relative;
+  cursor: pointer; /* Zeigt einen Zeigercursor beim Überfahren des Buttons */
+  border: none;
+}
+
+#foto-button:hover {
+  background-color: #8a9468; /* Ändert die Hintergrundfarbe des Buttons beim Überfahren */
+  color: #000000;
+}
+
+#zeichnung-button {
+  background-color: #783D19; 
+  color: white; 
+  width: 80px; 
+  height: 40px;
+  display: inline;
+  position:relative;
+  top: 20px; 
+  left:-10px;
+  cursor: pointer; 
+  border: none;
+}
+
+
+#zeichnung-button:hover {
+  background-color: #B99470; 
+  color: #000000;
+}
+
+
+

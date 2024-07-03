@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="result.css" />
+
+    
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+	<title>Ergebnis</title>
+	<style>
+
+
+.hidden{
+    display: none;
+    
+}
+
+
+	</style>
+</head>
+<body>
+   
+    
+
+    <div id="foto-richtig" class="hidden">
+
+        <h1>Richtig!</h1>
+        <p>Glückwunsch! <br>Dies ist ein Foto, du hast richtig getippt.</p>
+        
+    </div>
+
+    <div id="foto-falsch" class="hidden">
+        <h1>Falsch!</h1>
+        <p>Leider nicht richtig, das ist ein Foto.</p>
+        
+    </div>
+
+    
+    <div id="zeichnung-richtig" class="hidden">
+        <h1>Richtig!</h1>
+        <p>Das ist eine Zeichnung, gut erkannt!</p>
+       
+    </div>
+
+    
+    <div id="zeichnung-falsch" class="hidden">
+        <h1>Falsch!</h1>
+        <p>Leider nicht richtig. <br>
+            Das ist tatsächlich eine Zeichnung.</p>
+       
+    </div>
+
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+  var startButton = document.getElementById("startbutton");
+
+  startButton.addEventListener("click", function() {
+      // Öffne eine neue Seite
+      window.location.href = "quiz.html";
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  var startButton = document.getElementById("Anfang");
+
+  startButton.addEventListener("click", function() {
+      // Öffne eine neue Seite
+      window.location.href = "index.html";
+  });
+});
+		document.addEventListener("DOMContentLoaded",()=>{
+			const params = new URLSearchParams( location.search) ;
+			console.log(params);
+			const guessType = params.get("guesstype");
+
+			const label = params.get("label");
+
+            document.querySelectorAll(".hidden").forEach(element => {
+        element.classList.add("hidden");
+    });
+
+            switch(`${label}-${guessType}`){
+
+                case "foto-gs-foto":{
+                     document.querySelector("#foto-richtig").classList.remove("hidden")
+
+                    break;
+                }
+
+                case "foto-gs-zeichnung":{
+                    document.querySelector("#foto-falsch").classList.remove("hidden")
+
+                    break;
+                }
+
+                case "zeichnung-gs-zeichnung":{
+                    document.querySelector("#zeichnung-richtig").classList.remove("hidden")
+
+                    break;
+                }
+
+
+                case "zeichnung-gs-foto":{
+                    document.querySelector("#zeichnung-falsch").classList.remove("hidden")
+
+                    break;
+                }
+             
+
+
+
+			}
+    
+		});
+
+    
+	</script>
+   
+    <button id= "startbutton" type="button">Noch einmal spielen</button>
+    <button id= "Anfang" type="button">Zum Anfang</button>
+</body>
+</html>

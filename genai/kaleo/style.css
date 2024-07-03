@@ -223,3 +223,8 @@ footer {
     max-width: 30%;
 }
 
+#credits {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}

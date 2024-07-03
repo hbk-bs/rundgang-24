@@ -1,0 +1,225 @@
+* {
+    font-family: cursive;
+}
+
+body{
+    padding: 0;
+    min-height: 100vh; /* Mindesthöhe des Body auf 100% der Bildschirmhöhe setzen */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    max-width: 90vw;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #000;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+p{
+    font-size: 25px;
+    padding: 1rem;
+    color: #fff;
+}
+
+figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* Adjusts the gap between the image and the caption */
+    width: 100%; /* Ensures the figure takes the full width */
+}
+
+figcaption{
+    font-family: cursive;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 1rem; /* Space between the buttons */
+    margin: 2rem 0; /* Margin on top and bottom of the container */
+    width: 100%;
+}
+
+.lesenbutton, .backbutton, .kapitelbutton {
+    position: relative; /* Required for the pseudo-elements to be positioned correctly */
+    height: 50px; /* Einheitliche Höhe der Buttons */
+    background-image: url(button.jpg);
+    display: inline-block;
+    text-decoration: none; /* Remove underline from links */
+    border: 2px solid #634302;
+    border-radius: 10px;
+    box-shadow: 0 5px #634302, 0 10px 15px rgba(0, 0, 0, 0.5);
+    color: #432d01;
+    cursor: pointer;
+    font-family: cursive;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px 40px;
+    text-shadow: 1px 1px 2px #000;
+    overflow: hidden; /* Clip pseudo-element animation */
+    transition: all 0.3s ease;
+    margin-bottom: 15%;
+}
+
+/* Pseudo-Elemente für Effekte */
+.lesenbutton::before, .lesenbutton::after, .backbutton::before, .backbutton::after, .kapitelbutton::before, .kapitelbutton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.8), transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    pointer-events: none; /* Ensure clicks pass through */
+    z-index: -1; /* Behind button content */
+}
+
+.lesenbutton::after, .backbutton::after, .kapitelbutton::after {
+    background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.5), transparent);
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.5;
+    }
+}
+
+.lesenbutton:hover, .backbutton:hover, .kapitelbutton:hover {
+    box-shadow: 0 2px #634302, 0 5px 10px rgba(0, 0, 0, 0.3);
+    color: #634302;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.lesenbutton:hover::before, .lesenbutton:hover::after, .backbutton:hover::before, .backbutton:hover::after, .kapitelbutton:hover::before, .kapitelbutton:hover::after {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+}
+
+.lesenbutton:active, .backbutton:active, .kapitelbutton:active {
+    color: #634302;
+    box-shadow: 0 2px #634302, 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: #3e2a01;
+}
+
+a:hover {
+    color: #c88602 !important;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures the column takes the full width */
+    padding: 0.5rem; /* Optional: Adds padding to the column */
+}
+  
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%; /* Ensures the row takes the full width */
+    justify-content: space-between;
+}
+  
+.row.three-images figure {
+    flex: 1 1 calc(33.333% - 1rem); /* Ensures the figures take equal space, considering gap */
+    max-width: calc(33.333% - 1rem);
+}
+
+.row.two-images figure {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+}
+
+.row.one-image figure {
+    flex: 1 1 100%; /* Ein Bild, nimmt die gesamte Breite ein */
+    max-width: 100%;
+}
+  
+.row img {
+    width: 100%; /* Ensures the image takes the full width of*/
+    height: auto;
+    object-fit: cover;
+}
+
+img{
+    display: flex;
+    text-align: center;
+    width: 100%; /* Ensures the image takes the full width of its container */
+    height: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10%;
+    box-shadow: 5px 5px 100000px rgba(0, 0, 0, 5);
+}
+
+footer {
+    background-image: url(Buch.jpg);
+    background-size: 40%; /* Das Bild wird skaliert, um den gesamten Hintergrund zu bedecken */
+    background-position: center bottom; /* Das Bild wird horizontal zentriert */
+    background-attachment: fixed; /* Das Bild bleibt fest fixiert */
+    background-repeat: no-repeat;
+    padding: 80px 0; /* Innenabstand oben und unten im Footer */
+    color: #fff; /* Textfarbe */
+    text-align: center; /* Zentrierte Ausrichtung des Inhalts */
+    flex-shrink: 0; /* Verhindert, dass der Footer kleiner als seine Inhalte wird */
+    width: 100%; /* Volle Breite des Bildschirms */
+    height: 100%;
+    position: fixed; /* Fest positioniert */
+    bottom: 0; /* Am unteren Bildschirmrand kleben */
+    left: 0; /* Links ausgerichtet */
+    z-index: -1; /* Z-Index über anderen Inhalten */
+}
+
+.footer-content {
+    max-width: 1200px; /* Maximale Breite des Inhalts */
+    margin: 0 auto; /* Zentrierte Ausrichtung des Inhalts */
+    padding: 20px; /* Innenabstand für den Inhalt */
+} 
+
+.button-div {
+    text-align: center;
+}
+
+#kapitel1, #kapitel2, #kapitel3, #kapitel4, #kapitel5, #kapitel6, #kapitel7, #kapitel8, #kapitel9, #kapitel10, #kapitel11, #kapitel12, #kapitel13, #kapitel14, #kapitel15, #kapitel16, #kapitel17, #kapitel18, #kapitel19, #bonus
+  {
+    margin: 2%;
+}
+
+#cover {
+    max-width: 30%;
+}
+

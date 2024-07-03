@@ -74,7 +74,7 @@ figcaption{
     text-shadow: 1px 1px 2px #000;
     overflow: hidden; /* Clip pseudo-element animation */
     transition: all 0.3s ease;
-    margin-bottom: 15%;
+    margin-bottom: 0%;
 }
 
 /* Pseudo-Elemente für Effekte */
@@ -192,7 +192,7 @@ footer {
     background-position: center bottom; /* Das Bild wird horizontal zentriert */
     background-attachment: fixed; /* Das Bild bleibt fest fixiert */
     background-repeat: no-repeat;
-    padding: 80px 0; /* Innenabstand oben und unten im Footer */
+    padding: 100px 0; /* Innenabstand oben und unten im Footer */
     color: #fff; /* Textfarbe */
     text-align: center; /* Zentrierte Ausrichtung des Inhalts */
     flex-shrink: 0; /* Verhindert, dass der Footer kleiner als seine Inhalte wird */
@@ -206,7 +206,7 @@ footer {
 .footer-content {
     max-width: 1200px; /* Maximale Breite des Inhalts */
     margin: 0 auto; /* Zentrierte Ausrichtung des Inhalts */
-    padding: 20px; /* Innenabstand für den Inhalt */
+    padding: 10%; /* Innenabstand für den Inhalt */
 } 
 
 .button-div {

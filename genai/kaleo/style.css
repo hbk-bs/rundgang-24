@@ -198,7 +198,6 @@ footer {
     flex-shrink: 0; /* Verhindert, dass der Footer kleiner als seine Inhalte wird */
     width: 100%; /* Volle Breite des Bildschirms */
     height: 100%;
-    position: fixed; /* Fest positioniert */
     bottom: 0; /* Am unteren Bildschirmrand kleben */
     left: 0; /* Links ausgerichtet */
     z-index: -1; /* Z-Index über anderen Inhalten */

@@ -22,6 +22,11 @@ h6 {
 
   margin-top: 3rem;
 }
+
+h1 {
+  font-size: 3rem;
+  padding: auto 0px;
+}
 ul {
   padding: 0;
 }
@@ -144,6 +149,24 @@ li:hover a {
   color: white; /* Change link color on hover */
 }
 
+/* CSS for the animated gradient background for the h1 element */
+h1 {
+  background: linear-gradient(
+    45deg,
+    var(--gradient-color1),
+    var(--gradient-color2),
+    var(--gradient-color3),
+    var(--gradient-color4),
+    var(--gradient-color5)
+  );
+  background-size: 400% 400%;
+  color: transparent;
+  display: inline-block;
+  animation: animateGradient 5s ease infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
 @keyframes animateGradient {
   0% {
     background-position: 0% 50%;
@@ -153,5 +176,23 @@ li:hover a {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    max-width: 95vw;
+  }
+
+  footer > .content,
+  header > .content {
+    margin: 0 auto;
+    max-width: 95vw;
+  }
+  li {
+    width: 9rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    align-items: start;
   }
 }

@@ -66,6 +66,10 @@ footer {
   z-index: 1000;
 }
 
+#summary {
+  font-style: italic;
+}
+
 ul {
   display: flex;
   flex-direction: row;

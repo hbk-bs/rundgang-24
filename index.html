@@ -15,6 +15,7 @@
 
 			<h1>rundgang 2024</h1>
 			<p>Projects from the seminar on "Fundamentals of Digital Communication".</p>
+			<p id="summary"></p>
 		</div>
 	</header>
 
@@ -48,7 +49,15 @@
 					</li></ul>
 			</span>
 		</section>
-
+		<section>
+			<span id="little-tools">
+				<h2>Creative Coding &mdash; Little Tools</h2>
+				<p>Building interactive tools in "Generative Gestaltung" using mostly the P5.js library.</p>
+				<ul>
+					<li><a href="creative-coding/little-tools-bleona/index.html"> Little Tool Bleona</a></li>
+				</ul>
+			</span>
+		</section>
 		<section>
 			<span id="perspective">
 				<h2>Creative Coding &mdash; Perspective</h2>
@@ -190,7 +199,7 @@
 		}
 
 		function shuffleAllListItems() {
-			const ids = ['perspective','multiples','genai', 'creative-coding', 'llm', 'teachable-machine'];
+			const ids = ['little-tools','perspective','multiples','genai', 'creative-coding', 'llm', 'teachable-machine'];
 			ids.forEach(id => {
 
 
@@ -247,6 +256,56 @@
 					});
 			});
 	});
+</script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function(){
+		async function fetchStream() {
+	const allTextContent = document.body.innerText;
+	console.log(allTextContent);
+
+	const options = {
+		method: 'POST',
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify({"messages":[{"role":"system","content":"You are a summariser. Write a summary about this seminar at HBK BS. Keep the tone casual like the input text. The last projects where the ones with generative stories. The projects are presented at the Rundgang 2024 in the Braunschweig University of Art (HBK). Use the present as the exhibition is happening right now. Don't assue things like visitory can  interact with projects. It is a exhibition and these projects are all presented on a computer"},{"role":"user","content":allTextContent}]})
+	};
+
+	const response = await fetch('https://ff6347-openaistream.web.val.run/', options)
+		// .then(response => response.json())
+		// .then(response => console.log(response))
+		// .catch(err => console.error(err));
+
+	// const response = await fetch('https://example.com/stream-endpoint');
+
+	if (!response.ok) {
+			throw new Error('Network response was not ok');
+	}
+
+	const reader = response.body.getReader();
+	const decoder = new TextDecoder();
+	const outputElement = document.getElementById('summary');
+	let receivedLength = 0; // track the number of bytes received
+
+	while (true) {
+			const { done, value } = await reader.read();
+
+			if (done) {
+					console.log("Stream complete");
+					break;
+			}
+
+			receivedLength += value.length;
+			const chunk = decoder.decode(value, { stream: true });
+			outputElement.innerHTML += chunk;
+			console.log(`Received ${receivedLength} bytes of data so far.`);
+	}
+}
+
+fetchStream().catch(error => {
+	console.error('Error:', error);
+});
+
+	})
 </script>
 
 </body>

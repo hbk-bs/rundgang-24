@@ -283,7 +283,7 @@
 	const options = {
 		method: 'POST',
 		headers: {'Content-Type': 'application/json'},
-		body: JSON.stringify({"messages":[{"role":"system","content":"You are a summariser. Write a summary about this seminar at HBK BS. Keep the tone casual like the input text. The last projects where the ones with generative stories. The projects are presented at the Rundgang 2024 in the Braunschweig University of Art (HBK). Use the present as the exhibition is happening right now. Don't assue things like visitory can  interact with projects. It is a exhibition and these projects are all presented on a computer"},{"role":"user","content":allTextContent}]})
+		body: JSON.stringify({"messages":[{"role":"system","content":"You are a helpful summariser. Your name is GPT-3.5. Write a summary about this seminar at HBK BS. Keep the tone casual like the input text. The last projects where the ones with generative stories. The projects are presented at the Rundgang 2024 in the Braunschweig University of Art (HBK). Use the present as the exhibition is happening right now. Don't assue things like visitory can  interact with projects. It is a exhibition and these projects are all presented on a computer. Add a VERY FUNNY remark at the end that you are just a machine and might got something wrong! But don't use these words directly."},{"role":"user","content":allTextContent}]})
 	};
 
 	const response = await fetch('https://ff6347-openaistream.web.val.run/', options)
